@@ -2,8 +2,6 @@
 
 namespace App\Entity;
 
-use App\Entity\Group;
-use App\Entity\Tracking;
 use App\Repository\UserRepository;
 use App\Services\EncryptService;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -15,7 +13,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Table(name="eurocave_users")
  * @ORM\Entity(repositoryClass=UserRepository::class)
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id
@@ -222,4 +220,8 @@ class User
 
         return $this;
     }
+    public function getGroupName(){
+        return $this->group->name;
+    }
+
 }
