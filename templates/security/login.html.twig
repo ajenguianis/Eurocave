@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+    <div id="login">
+        <h3 class="text-center text-white pt-5">{% trans %}Login form {% endtrans %}</h3>
+        <div class="container">
+            {% if group == 'user' %}
+                <div class="h1 title">{% trans %}Welcome to the My Wine Dispenser online help.{% endtrans %}</div>
+                {# <div class="description"> #}
+                {# <p> #}
+                {# {% trans %}Please enter your appliance’s individual serial number.{%endtrans%} #}
+                {# </p> #}
+                {# <p> #}
+                {# {% trans %}It is written on the grey label found on the inside or back of the appliance.{%endtrans%} #}
+                {# </p> #}
+                {# </div> #}
+            {% else %}
+                <div class="h1 title">{% trans %}Welcome to the My Wine Dispenser online training platform.{% endtrans %}</div>
+                <div class="description">
+                    <p>
+                        {% trans %}N.B.! You must have an account to access it.{% endtrans %}
+                    </p>
+                </div>
+            {% endif %}
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col col-lg-12">
+                    <div id="login-box">
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+
+                        {% if app.user %}
+                            <div class="mb-3">
+                                {% trans %}You are logged in as{% endtrans %} {{ app.user.username }}, <a
+                                        href="{{ path('app_logout') }}">{% trans %}Logout{% endtrans %}</a>
+                            </div>
+                        {% endif %}
+                        <form id="login-form" class="form" action="" method="post">
+                            <h3 class="text-center form-title">
+                                {% if group == 'user' %}
+                                   <p>{% trans %}Please enter your appliance’s individual serial number.{% endtrans %}</p>
+                                    <p>{% trans %}It is written on the grey label found on the inside or back of the appliance.{% endtrans %}</p>
+                                {% else %}
+                                    {% trans %}Please enter the email address you gave to EuroCave.{% endtrans %}
+
+                                {% endif %}
+                            </h3>
+                            <div class="form-group {% if group == 'user' %}hide {% endif %}">
+                                <label for="username" class="control-label">{% trans %}Email{% endtrans %}</label><br>
+                                <input type="email" name="email" id="inputEmail"
+                                       class="form-control" required autofocus>
+                            </div>
+                            <div class="form-group {% if group !='user' %}hide {% endif %}">
+                                <label for="serial"
+                                       class="control-label">{% trans %}Individual serial number{% endtrans %}
+                                    </label><br>
+                                <input type="text" name="serial" class="form-control"
+                                       {% if group=='user' %}required {% endif %} autofocus>
+                            </div>
+                            <div class="form-group {% if group=='user' %}hide {% endif %}">
+                                <label for="password" class="control-label">{% trans %}Password{% endtrans %}
+                                    </label><br>
+                                <input type="password" name="password" id="password" class="form-control">
+                            </div>
+                            <input type="hidden" name="_csrf_token"
+                                   value="{{ csrf_token('authenticate') }}"
+                            >
+                            <div class="form-group">
+                                <label for="remember-me"
+                                       class="control-label{% if group=='user' %}hide {% endif %}">
+                                    <span class="{% if group=='user' %}hide {% endif %}">{% trans %}Remember me{% endtrans %}</span> <span>
+                                        <input
+                                                id="_remember_me" name="remember-me"
+                                                class="{% if group=='user' %}hide {% endif %}"
+                                                type="checkbox"></span></label><br>
+                                <input type="submit" name="submit" class="btn btn-info btn-md"
+                                       value="{% trans %}Submit{% endtrans %}">
+                            </div>
+                            {# <div id="register-link" class="text-right {% if group=='user' %}hide {% endif %}"> #}
+                            {# <a href="{{ path('app_register') }}" class="control-label">{%trans %}Register here{% endtrans %}</a> #}
+                            {# </div> #}
+                            <div class="text-center reset-pass {% if group=='user' %}hide {% endif %}"><a
+                                        href="{{ path('app_forgot_password_request') }}"
+                                        class="control-label">{% trans %}Forgot password{% endtrans %}</a></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% if group == 'user' %}
+                <div class="h2 title user-page"><span class="user-page">{% trans %}Are you having problems logging in ?{% endtrans %}</span> <a
+                            href="https://www.eurocavepro.com/content/239-contact-us"
+                            target="_blank"> {% trans %}Click here{% endtrans %}</a></div>
+            {% else %}
+                <div class="h2 title">{% trans %}Are you having problems logging in ?{% endtrans %}</div>
+                <div class="question">
+                    <div class="response">{% trans %}Have you lost your password ?{% endtrans %}</div>
+                    <p>
+                        {% trans %}Please click "Forgot password".{% endtrans %}
+                    </p>
+                </div>
+                <div class="question">
+                    <div class="response">{% trans %}Do you not have an account yet ?{% endtrans %}</div>
+                    <p>
+                        {% trans %}Please contact your EuroCave contact person to activate your account.{% endtrans %}
+                    </p>
+                </div>
+                <div class="question">
+                    <div class="response">{% trans %}Have you not got a password yet ?{% endtrans %}</div>
+                    <p>
+                        {% trans %}If you asked to have your account activated, an automatic email will have been sent to you allowing you to create a password. If you did not receive it, please check your spam box.  Failing that, please contact your EuroCave contact person.{% endtrans %}
+                    </p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

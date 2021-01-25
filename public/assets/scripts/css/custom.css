@@ -1,0 +1,301 @@
+p {
+    text-align: justify;
+}
+
+.login-register {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    height: 100vh;
+}
+
+#login .container #login-row #login-column #login-box {
+    max-width: 600px;
+    height: auto;
+    /*border: 1px solid #9C9C9C;*/
+    background-color: #EAEAEA;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#login-form, form[name=registration_form] {
+    margin: 20px 0;
+}
+
+#login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+}
+
+#login .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+}
+
+.reset-password {
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 800px !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+
+    .title {
+        margin-bottom: 40px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 750px;
+    }
+}
+
+
+
+section a {
+    color: #ffffff;
+    text-decoration: none;
+}
+section a:hover {
+    color: #000000;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.section {
+    /* min-height: 400px; */
+    background-color: #fff;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    overflow: hidden;
+}
+.static-body .compte-box .compte-inner {
+    background: #000000;
+    text-align: center;
+    padding: 24px 0 15px;
+    margin: 0 0 15px;
+    border-radius: 7px;
+    text-transform: uppercase;
+
+}
+.section .set-in-center {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+.static-body .compte-box .compte-inner:hover {
+    background: #ffffff;
+    border: 1px solid #000;
+    border-radius: 7px;
+    transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+}
+section .compte-box {
+    /* padding: 5px 120px 0 0; */
+    text-align: right;
+    z-index: 99 !important;
+}
+
+section .title {
+    margin-left: auto;
+    text-align: center;
+}
+
+.btn-group-vertical > .btn-group:after, .btn-group-vertical > .btn-group:before, .btn-toolbar:after, .btn-toolbar:before, .clearfix:after, .clearfix:before, .container-fluid:after, .container-fluid:before, .container:after, .container:before, .dl-horizontal dd:after, .dl-horizontal dd:before, .form-horizontal .form-group:after, .form-horizontal .form-group:before, .modal-footer:after, .modal-footer:before, .modal-header:after, .modal-header:before, .nav:after, .nav:before, .navbar-collapse:after, .navbar-collapse:before, .navbar-header:after, .navbar-header:before, .navbar:after, .navbar:before, .pager:after, .pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before {
+    display: table;
+    content: " ";
+}
+
+.col-auto {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+    float:right;
+}
+.justify-content-end {
+    -ms-flex-pack: end!important;
+    justify-content: flex-end!important;
+}
+.no-gutters {
+    margin-right: 20px !important;
+    margin-left: 0;
+}
+
+div#lang-selector a{
+    color: #fff;
+}
+div#lang-selector .other{
+    color: #000000;
+    position: absolute;
+    border: 1px solid #000;
+    padding: 1rem;
+    top: 1.5rem;
+    right: .5rem;
+    display: none;
+    background: #000000;
+}
+div#lang-selector a {
+    color: #000000;
+    text-transform: uppercase;
+}
+.header-top a:not(.btn):not(.nav-link) {
+    color: #000000;
+}
+#header .header-btn-w {
+    padding: 0 .5rem;
+}
+/*div#lang-selector {*/
+/*    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAGCAYAAAAVMmT4AAAACXBIWXMAAAsSAAALEgHS3X78AAAARklEQVQYlXWOiQkAMAjE4kYdqaN10yuK9MUDwScBARrQJVGV34PLYVRCgiP6Y/kJJ3jBr/CCXpaHFTNzISLJhZ3qz28vMQF0tIAN2GZYWgAAAABJRU5ErkJggg==);*/
+/*    background-position: 84% 10px;*/
+/*    background-repeat: no-repeat;*/
+/*    padding-right: 28px!important;*/
+/*}*/
+.no-gutters>.col, .no-gutters>[class*=col-] {
+    padding-right: 0;
+    padding-left: 0;
+}
+div#lang-selector:hover .other {
+    display: block;
+}
+.header-top a:not(.btn):not(.nav-link):hover {
+    color: #000000;
+}
+#header .header-top {
+    padding-top: 2.6rem;
+}
+.header-top {
+    transition: padding 0.3s ease;
+}
+.header-top {
+    padding-top: .7778317939rem;
+    padding-bottom: .7778317939rem;
+    color: #000000;
+}
+.login-register.dropdown-menu{
+    min-width: 4rem !important;
+}
+
+.header-top .logout-link {
+    margin: 0 20px;
+}
+.header-top .logout-link a{
+    color: #fff;
+    font-weight: 400;
+    background-color: #C1C7D0;
+    border-color: #C1C7D0;
+}
+form[name=change_password_form]{
+    padding:20px;
+    margin:20px;
+}
+.btn-info {
+    color: #fff;
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+}
+.text-info {
+    color: #000000!important;
+}
+.reset-pass a{
+    color: #000000;
+}
+.form-group{
+    padding: 0 20px 0 20px;
+}
+form[name=reset_password_request_form]{
+    padding:20px;
+    margin:20px;
+}
+.btn-secondary {
+    color: #fff;
+    background-color: #C1C7D0 !important;
+    border-color: #C1C7D0 !important;
+}
+.header-top .btn-secondary.focus, .header-top .btn-secondary:focus {
+    background-color: #C1C7D0 !important;
+    border-color: #C1C7D0 !important;
+}
+body {
+    font-family: 'Raleway', serif !Important;
+}
+.col-auto {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+}
+.header-top {
+    padding-top: 2.6rem;
+}
+.header-top .header-top-margin{
+    margin: 0 0 0 20px;
+}
+.header-top .col-header-center{
+    text-align: center;
+}
+.login-register .container #login-row{
+    margin: 100px 0;
+}
+.login-register .container .title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+.login-register .container .description{
+    margin: 25px 0;
+    font-size: 21px;
+
+}
+.login-register .container .description p{
+text-align: center;
+font-size: 16px;
+}
+.login-register .container .question .response{
+    font-weight: bold;
+    font-size: 16px;
+
+}
+.login-register .container .question p{
+font-size: 14px;
+}
+.login-register .container .h2{
+    margin: 0 0 50px;
+    font-size: 20px;
+}
+.form-title{
+    margin: 0 0 53px;
+}
+.form-title p{
+    font-size: 20px;
+    text-align: center;
+}
+.login-register .user-page a{
+text-decoration:underline;
+    color: #000000;
+}
+.compte-box a:hover{
+    text-decoration: none;
+}
+.unset-cursor{
+    cursor: unset;
+}

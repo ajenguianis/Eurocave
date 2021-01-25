@@ -1,0 +1,113 @@
+{% extends 'layout.html.twig' %}
+{% block body %}
+    <section class="section content">
+        <div class="container ">
+{#            <div class="title col">#}
+{#                <h2>{% trans %}Modules{% endtrans %}</h2>#}
+{#                <hr>#}
+{#            </div>#}
+            <div class="static-body">
+
+                {% if group_id ==3 %}
+
+                    <div class="row">
+
+                        <div class="compte-box set-in-center col-md-6 col-sm-6 col-xs-12">
+                            <a href="#" data-href="{{ asset('modules/users/'~app.request.locale~'/story.html') }}" id="user-iframe">
+                                <div class="compte-inner">
+                                    <h4>{% trans %}Users guide{% endtrans %}</h4>
+
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+
+                {% endif %}
+                {% if group_id ==2 %}
+
+                    <div class="row">
+{#                        <div class="compte-box col-md-4 col-sm-4 col-xs-12">#}
+{#                            <a href="#">#}
+{#                                <div class="compte-inner">#}
+{#                                    <h4>{% trans %}Installation{% endtrans %}</h4>#}
+{#                                </div>#}
+{#                            </a>#}
+{#                        </div>#}
+
+
+                        <div class="compte-box set-in-center col-md-6 col-sm-6 col-xs-12">
+{#                        <div class="compte-box col-md-4 col-sm-4 col-xs-12">#}
+                            <a href="#" data-href="{{ asset('modules/users/'~app.request.locale~'/story.html') }}" id="user-iframe">
+                                <div class="compte-inner">
+                                    <h4>{% trans %}Users guide{% endtrans %}</h4>
+
+                                </div>
+                            </a>
+                        </div>
+
+
+{#                        <div class="compte-box col-md-4 col-sm-4 col-xs-12">#}
+{#                            <a href="#">#}
+{#                                <div class="compte-inner">#}
+
+{#                                    <h4>{% trans %}Maintenance{% endtrans %}</h4>#}
+{#                                </div>#}
+{#                            </a>#}
+{#                        </div>#}
+                    </div>
+
+
+
+                {% endif %}
+                {% if group_id ==1 %}
+                    <div class="row">
+{#                        <div class="compte-box col-md-4 col-sm-4 col-xs-12">#}
+{#                            <a href="#">#}
+{#                                <div class="compte-inner">#}
+
+{#                                    <h4>{% trans %}Distributor tools{% endtrans %}</h4>#}
+{#                                </div>#}
+{#                            </a>#}
+{#                        </div>#}
+
+
+{#                        <div class="compte-box col-md-4 col-sm-4 col-xs-12">#}
+{#                            <a href="#">#}
+{#                                <div class="compte-inner">#}
+{#                                    <h4>{% trans %}Installation{% endtrans %}</h4>#}
+{#                                </div>#}
+{#                            </a>#}
+{#                        </div>#}
+
+
+{#                        <div class="compte-box col-md-4 col-sm-4 col-xs-12">#}
+                        <div class="compte-box set-in-center col-md-6 col-sm-6 col-xs-12">
+                            <a href="#" data-href="{{ asset('modules/users/'~app.request.locale~'/story.html') }}" id="user-iframe">
+                                <div class="compte-inner">
+                                    <h4>{% trans %}Users guide{% endtrans %}</h4>
+
+                                </div>
+                            </a>
+                        </div>
+
+
+                    </div>
+{#                    <div class="row">#}
+{#                        <div class="compte-box col-md-4 col-sm-4 col-xs-12">#}
+{#                            <a href="#">#}
+{#                                <div class="compte-inner">#}
+
+{#                                    <h4>{% trans %}Maintenance{% endtrans %}</h4>#}
+{#                                </div>#}
+{#                            </a>#}
+{#                        </div>#}
+{#                    </div>#}
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

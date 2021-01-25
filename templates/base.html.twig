@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+
+    {% block stylesheets %}
+        <link href="{{ asset('assets/scripts/css/custom.css') }}" rel="stylesheet" type="text/css"/>
+        <link href="{{ asset('assets/plugins/css/bootstrap/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
+
+    {% endblock %}
+    {% block javascripts %}
+        <script src="{{ asset('assets/plugins/js/jquery/jquery-3.5.1.slim.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('assets/plugins/js/popper/popper.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('assets/plugins/js/bootstrap/bootstrap.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('assets/scripts/js/app.js') }}" type="text/javascript"></script>
+    {% endblock %}
+</head>
+
+<body class="login-register">
+{% block nav %}
+
+ {{ include('_partials/nav.html.twig') }}
+
+{% endblock %}
+{% block body %}{% endblock %}
+
+</body>
+</html>

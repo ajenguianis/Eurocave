@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{%trans %}Reset your password{% endtrans %}{% endblock %}
+
+{% block body %}
+    <div id="login">
+        <h3 class="text-center text-white pt-5">{%trans %}Reset password form{% endtrans %}</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                {% for flashError in app.flashes('reset_password_error') %}
+                    <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+                {% endfor %}
+                <div id="login-column" class="col col-lg-12">
+                    <div id="login-box">
+                        {{ form_start(requestForm) }}
+                        <h3 class="text-center">{%trans %}Reset password{% endtrans %}</h3>
+                        <div class="form-group">
+                            <label for="email" class="control-label">{%trans %}Email{% endtrans %}:</label><br>
+                            {{ form_widget(requestForm.email, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <small>
+                                    {%trans %}Enter your email address and we we will send you a
+                                    link to reset your password.{% endtrans %}
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="form-group reset-password">
+                            <button class="btn btn-info btn-md">{%trans %}Send password reset email{% endtrans %}</button>
+                        </div>
+                        {{ form_end(requestForm) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{#    {% for flashError in app.flashes('reset_password_error') %}#}
+{#        <div class="alert alert-danger" role="alert">{{ flashError }}</div>#}
+{#    {% endfor %}#}
+{#    <h1>Reset your password</h1>#}
+
+{#    {{ form_start(requestForm) }}#}
+{#        {{ form_row(requestForm.email) }}#}
+{#        <div>#}
+{#            <small>#}
+{#                Enter your email address and we we will send you a#}
+{#                link to reset your password.#}
+{#            </small>#}
+{#        </div>#}
+
+{#        <button class="btn btn-primary">Send password reset email</button>#}
+{#    {{ form_end(requestForm) }}#}
+{% endblock %}

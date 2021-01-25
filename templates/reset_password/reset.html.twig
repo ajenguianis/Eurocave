@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{%trans %}Reset your password{% endtrans %}{% endblock %}
+
+{% block body %}
+    <div id="login">
+        <h3 class="text-center text-white pt-5">{% trans %}Reset your password{% endtrans %}</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col col-lg-12">
+                    <div id="login-box">
+
+                        {{ form_start(resetForm) }}
+
+                        {{ form_row(resetForm.plainPassword, {'attr': {'class': 'form-group'}}) }}
+                        <button class="btn btn-info btn-md">{%trans %}Reset password{% endtrans %}</button>
+                        {{ form_end(resetForm) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

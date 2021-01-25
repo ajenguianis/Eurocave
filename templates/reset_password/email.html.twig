@@ -1,0 +1,22 @@
+<div id="desktop_logo" style="text-align: center">
+    <a href="https://www.eurocavepro.com/">
+        <img class="logo img-fluid normal"
+             src="{{ app.request.schemeAndHttpHost ~ app.request.baseUrl ~ '/images/logos/logo-eurocave-pro-fond-blanc.jpg' }}"
+             alt="Eurocave">
+    </a>
+</div>
+<h2>Bonjour,</h2>
+<h2>Hello,</h2>
+<p>&nbsp;</p>
+<p>Click on the following link to reset your password for the My EuroCave online training platform.</p>
+<p>Cliquez sur le lien suivant pour réinitialiser votre mot de passe de la plateforme de formation en ligne My EuroCave.</p>
+
+<a href="{{ url('app_reset_password', {token: resetToken.token}) }}">{{ url('app_reset_password', {token: resetToken.token}) }}</a>
+
+<p>Attention ! Ce lien expirera dans {{ tokenLifetime|date('g') }} heure(s)
+    .</p>
+<p>Warning ! This link will expire in {{ tokenLifetime|date('g') }} hour(s)
+    .</p>
+<p>&nbsp;</p>
+<p>Cordialement.</p>
+<p>Sincerely yours.</p>

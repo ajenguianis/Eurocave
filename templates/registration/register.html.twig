@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <div id="login">
+        <h3 class="text-center text-white pt-5">{% trans %}Sign up form{% endtrans %}</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                {% for flashError in app.flashes('verify_email_error') %}
+                    <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+                {% endfor %}
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        {{ form_start(registrationForm) }}
+                            <h3 class="text-center">{% trans %}Sign up{% endtrans %}</h3>
+                            <div class="form-group">
+                                <label for="username" class="control-label">{% trans %}Email{% endtrans %}:</label><br>
+                                {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="control-label">{% trans %}Password{% endtrans %}:</label><br>
+                                {{ form_widget(registrationForm.plainPassword, {
+                                    label: 'Password',
+                                    'attr': {'class': 'form-control'}
+                                }) }}
+                            </div>
+                        <div class="form-group">
+                                <label for="password" class="control-label">{% trans %}Group{% endtrans %}</label><br>
+                            {{ form_widget(registrationForm.group, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+
+                            <div class="form-group">
+                                <label for="remember-me" class="control-label"><span>{% trans %}Agree terms{% endtrans %}</span> <span>{{ form_widget(registrationForm.agreeTerms) }}</span></label><br>
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="{% trans %}submit{% endtrans %}">
+                            </div>
+                        {{ form_end(registrationForm) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{#    <h1>Register</h1>#}
+
+{#    {{ form_start(registrationForm) }}#}
+{#        {{ form_widget(registrationForm.email) }}#}
+{#        {{ form_row(registrationForm.plainPassword, {#}
+{#            label: 'Password'#}
+{#        }) }}#}
+
+{#        {{ form_row(registrationForm.group) }}#}
+{#        {{ form_row(registrationForm.agreeTerms) }}#}
+
+{#        <button type="submit" class="btn">Register</button>#}
+{#    {{ form_end(registrationForm) }}#}
+{% endblock %}

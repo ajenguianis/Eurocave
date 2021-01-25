@@ -1,0 +1,52 @@
+<div class="header-top">
+    <div class="row flex-nowrap justify-content-between align-items-cente">
+        <div class="col-4 pt-1">
+
+        </div>
+        {% set current_path = app.request.get('_route') %}
+
+        <div class="col-4 text-center">
+            <div id="desktop_logo">
+                <a class="{% if current_path!='app_login'%} unset-cursor{% endif %}" href="{% if current_path=='app_login'%}https://www.eurocavepro.com/{% else %}#{% endif %}">
+                    <img class="logo img-fluid normal" src="{% if current_path=='app_login' or 1==1 %}{{ asset('images/logos/logo-eurocave-pro-fond-blanc.jpg') }}{% else %}{{ asset('images/logos/logo-eurocave-pro.jpg') }}{% endif %}" alt="Eurocave">
+                </a>
+            </div>
+        </div>
+        <div class="col-4 d-flex justify-content-end">
+            <div class="row no-gutters justify-content-end">
+                {% if app.user %}
+                    <div class="logout-link">
+                        <a href="{{ path('app_logout') }}" class="btn btn-outline-secondary">{% trans %} Logout {% endtrans %}</a>
+                    </div>
+                {% endif %}
+                <div id="lang-selector" class="col col-auto header-btn-w">
+                    <div class="dropdown">
+                        {% for locale in locales %}
+                            {% if locale == app.request.locale %}
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img height="11" span="" src="{{ asset('images/flags/'~locale~'.png') }}" width="16" style="margin-right: 2px;">
+                                    {{ locale }}
+                                </button>
+                            {% endif %}
+                        {% endfor %}
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="min-width: 4rem;">
+                            {% for locale in locales %}
+                                {% if locale != app.request.locale %}
+
+                                    <a class="dropdown-item" href="{{ path('change_locale', {'locale': locale}) }}"> <img height="11" span="" src="{{ asset('images/flags/'~locale~'.png') }}" width="16" style="margin-right: 2px;"> {{ locale }} </a>
+
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
